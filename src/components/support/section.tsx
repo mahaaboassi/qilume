@@ -7,7 +7,7 @@ export const PrivacySection = () => {
             <div className="relative">
                 <Image src={Office} className="lg:h-[300px] w-full object-cover" alt={"Office"}></Image>
                 <p className="absolute bottom-[20px] left-[20px] text-lg lg:text-3xl font-bold">
-                    Privacy Policy for QiLumé <br/>
+                    Privacy Policy<br/>
                     <span className="text-xs lg:text-sm font-medium">Last Updated: Nov 11, 2025</span>
                 </p>
             </div>
@@ -36,6 +36,7 @@ export const PrivacySection = () => {
                     <li className="flex gap-2 items-center"><span className="w-[8px] h-[8px] rounded-full bg-[#31533E]"></span>Send updates, offers, or reminders (only if you’ve opted in)</li>
                     <li className="flex gap-2 items-center"><span className="w-[8px] h-[8px] rounded-full bg-[#31533E]"></span>Improve our website and client experience</li>
                     <li className="flex gap-2 items-center"><span className="w-[8px] h-[8px] rounded-full bg-[#31533E]"></span>Comply with legal or regulatory obligations</li>
+                    <li className="flex gap-2 items-center"><span className="w-[8px] h-[8px] rounded-full bg-[#31533E]"></span>Maintain accurate health records to ensure treatment safety and effectiveness</li>
                 </ul> 
             </div>
             <div className="flex flex-col gap-y-3 lg:gap-y-4 px-10 py-5 lg:px-20">
