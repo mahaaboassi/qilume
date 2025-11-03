@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+
+  --font-alatsi: var(--font-alatsi);
+  --font-abril: var(--font-abril-fatface);
+  --font-abhaya: var(--font-abhaya-libre);
+  --font-istok: var(--font-istok-web);
+  --font-darker: var(--font-darker-grotesque);
+}
