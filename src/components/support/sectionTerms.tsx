@@ -8,7 +8,7 @@ export const TermsSection = () => {
                 <Image src={Office} className="lg:h-[300px] w-full object-cover" alt={"Office"}></Image>
                 <p className="absolute bottom-[20px] left-[20px] text-lg lg:text-3xl font-bold">
                     Terms And Conditions<br/>
-                    <span className="text-xs lg:text-sm font-medium">Last Updated: Nov 11, 2025</span>
+                    <span className="text-xs lg:text-sm font-medium">Last Updated: Nov 3, 2025</span>
                 </p>
             </div>
 
