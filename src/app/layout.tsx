@@ -114,14 +114,14 @@ export default function RootLayout({
         <link rel="icon" type="image/png" href="/logo.png" />
         <Script
           async
-          src="https://www.googletagmanager.com/gtag/js?id=G-YNW5K1RPQ5"
+          src="https://www.googletagmanager.com/gtag/js?id=G-76EMQBESRD"
         />
         <Script id="google-analytics">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'G-YNW5K1RPQ5');
+            gtag('config', 'G-76EMQBESRD');
           `}
         </Script>
         <Script
