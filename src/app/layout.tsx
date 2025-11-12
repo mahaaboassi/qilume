@@ -112,6 +112,7 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <link rel="icon" type="image/png" href="/logo.png" />
+        <link rel="icon" type="image/x-icon" href="/logo.png" />
         <Script
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-76EMQBESRD"
