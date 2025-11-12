@@ -71,7 +71,7 @@ const jsonLdData = {
       "postalCode": "122003"
   },
   "sameAs": [
-    "https://www.facebook.com/qilumeaesthetics",
+    "https://www.instagram.com/qilume.co/",
     "https://www.linkedin.com/company/qilum%C3%A9-aesthetics/"
   ],
   "geo": {
