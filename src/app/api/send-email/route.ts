@@ -5,12 +5,15 @@ interface ContactFormData {
   name: string
   email: string
   message: string
+  date: string 
+  service: string 
+  phone: string
 }
 
 export async function POST(req: NextRequest) {
   try {
     const body = (await req.json()) as ContactFormData
-    const { name, email, message } = body
+    const { name, email, message, date, service, phone } = body
 
     if (!name || !email || !message) {
       return NextResponse.json({ message: "Name, Email, and Message are required." }, { status: 400 })
@@ -18,8 +21,10 @@ export async function POST(req: NextRequest) {
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
-        user: "qilume.aesthetics@gmail.com",
-        pass: "yrpj mmmu jeub ifqy",
+        // user: "qilume.aesthetics@gmail.com",
+        // pass: "yrpj mmmu jeub ifqy",
+        user: "eng.mahaab96@gmail.com",
+        pass: "qaww udkv zcqm kste",
       },
     })
 
@@ -77,6 +82,24 @@ export async function POST(req: NextRequest) {
                               </td>
                             </tr>
                             <tr>
+                              <td style="padding-bottom: 15px;">
+                                <strong style="color: #2d3748; font-size: 14px; text-transform: uppercase; letter-spacing: 0.5px;">📞 Phone</strong>
+                                <p style="margin: 5px 0 0 0; color: #4a5568; font-size: 16px; font-weight: 500;">${phone}</p>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td style="padding-bottom: 15px;">
+                                <strong style="color: #2d3748; font-size: 14px; text-transform: uppercase; letter-spacing: 0.5px;">🧾 Service</strong>
+                                <p style="margin: 5px 0 0 0; color: #4a5568; font-size: 16px; font-weight: 500;">${service}</p>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td style="padding-bottom: 15px;">
+                                <strong style="color: #2d3748; font-size: 14px; text-transform: uppercase; letter-spacing: 0.5px;">📅 Date</strong>
+                                <p style="margin: 5px 0 0 0; color: #4a5568; font-size: 16px; font-weight: 500;">${date}</p>
+                              </td>
+                            </tr>
+                            <tr>
                               <td>
                                 <strong style="color: #2d3748; font-size: 14px; text-transform: uppercase; letter-spacing: 0.5px;">💬 Message</strong>
                                 <div style="margin: 10px 0 0 0; padding: 15px; background-color: #ffffff; border-radius: 6px; border: 1px solid #e2e8f0;">
@@ -124,7 +147,8 @@ export async function POST(req: NextRequest) {
 
     const mailOptions = {
       from: email,
-      to: "info@qilumeaesthetics.com",
+      // to: "info@qilumeaesthetics.com",
+      to: "maha.assi@arizglobal.com",
       subject: `New Message from ${name}`,
       text: `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
       html: htmlTemplate,

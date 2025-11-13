@@ -33,17 +33,12 @@ function ContactSection() {
     name: "",
     email: "",
     message: "",
-    phone: "",
-    service: "",
-    date: ""
   })
   const [errors, setErrors] = useState<{ [key: string]: string }>({})
   const [submitting, setSubmitting] = useState(false)
   const [success, setSuccess] = useState(false)
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    console.log(e);
-    
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value })
     setErrors({ ...errors, [e.target.name]: "" }) // clear error when editing
   }
@@ -52,9 +47,6 @@ function ContactSection() {
     const newErrors: { [key: string]: string } = {}
     if (!formData.name.trim()) newErrors.name = "Name is required."
     if (!formData.email.trim()) newErrors.email = "Email is required."
-    if (!formData.phone.trim()) newErrors.phone = "Phone is required."
-    if (!formData.service.trim()) newErrors.service = "Service is required."
-    if (!formData.date.trim()) newErrors.date = "Date is required."
     else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) newErrors.email = "Invalid email address."
     if (!formData.message.trim()) newErrors.message = "Message is required."
     return newErrors
@@ -67,10 +59,10 @@ function ContactSection() {
       setErrors(validationErrors)
       return
     }
-    
+
     setSubmitting(true)
     setSuccess(false)
-    
+
     try {
       const res = await fetch("/api/send-email", {
         method: "POST",
@@ -81,7 +73,7 @@ function ContactSection() {
       const data = await res.json()
 
       if (res.ok) {
-        setFormData({ name: "", email: "", message: "", service: "", date: "", phone: "" })
+        setFormData({ name: "", email: "", message: "" })
         setSuccess(true)
         // Clear success message after 5 seconds
         setTimeout(() => setSuccess(false), 5000)
@@ -137,48 +129,7 @@ function ContactSection() {
               }`}
             />
             {errors.email && <span className="text-red-500 text-sm w-full">{errors.email}</span>}
-            <input
-              name="phone"
-              value={formData.phone}
-              onChange={handleChange}
-              type="number"
-              placeholder="Phone"
-              className={`flex-1 border ${
-                errors.phone ? "border-red-500" : "border-gray-300"
-              } rounded-full px-4 py-2 focus:outline-none focus:ring-2 ${
-                errors.phone ? "focus:ring-red-500" : "focus:ring-green-700"
-              }`}
-            />
-            {errors.phone && <span className="text-red-500 text-sm w-full">{errors.phone}</span>}
-            <input
-              name="date"
-              value={formData.date}
-              onChange={handleChange}
-              type="date"
-              className={`flex-1 border ${
-                errors.date ? "border-red-500" : "border-gray-300"
-              } rounded-full px-4 py-2 focus:outline-none focus:ring-2 ${
-                errors.date ? "focus:ring-red-500" : "focus:ring-green-700"
-              }`}
-            />
-            {errors.date && <span className="text-red-500 text-sm w-full">{errors.date}</span>}
-            <select name="service" onChange={handleChange} className={`flex-1 border ${
-                errors.service ? "border-red-500" : "border-gray-300"
-              } rounded-full px-4 py-2 focus:outline-none focus:ring-2 ${
-                errors.service ? "focus:ring-red-500" : "focus:ring-green-700"
-              }`}>
-              <option>Service</option>
-              <option value="Botox">Botox</option>
-              <option value="Fillers">Fillers</option>
-              <option value="Thread lifts">Thread Lifts</option>
-              <option value="HIFU">HIFU</option>
-              <option value="Laser Skin Toning">Laser Skin Toning</option>
-              <option value="Cryo T-Shock">Cryo T-Shock</option>
-              <option value="Laser Hair Reduction">Laser Hair Reduction</option>
-              <option value="Dermaplaning">Dermaplaning</option>
-              <option value="MediFacials">MediFacials</option>
-            </select>
-            {errors.service && <span className="text-red-500 text-sm w-full">{errors.service}</span>}
+
             <textarea
               name="message"
               value={formData.message}
