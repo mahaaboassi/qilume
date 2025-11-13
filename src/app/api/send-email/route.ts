@@ -21,10 +21,8 @@ export async function POST(req: NextRequest) {
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
-        // user: "qilume.aesthetics@gmail.com",
-        // pass: "yrpj mmmu jeub ifqy",
-        user: "eng.mahaab96@gmail.com",
-        pass: "qaww udkv zcqm kste",
+        user: "qilume.aesthetics@gmail.com",
+        pass: "yrpj mmmu jeub ifqy",
       },
     })
 
@@ -147,8 +145,8 @@ export async function POST(req: NextRequest) {
 
     const mailOptions = {
       from: email,
-      // to: "info@qilumeaesthetics.com",
-      to: "maha.assi@arizglobal.com",
+      to: "info@qilumeaesthetics.com",
+      // to: "maha.assi@arizglobal.com",
       subject: `New Message from ${name}`,
       text: `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
       html: htmlTemplate,
