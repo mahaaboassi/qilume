@@ -155,6 +155,7 @@ function ContactSection() {
               value={formData.date}
               onChange={handleChange}
               type="date"
+              placeholder="Date"
               className={`flex-1 border ${
                 errors.date ? "border-red-500" : "border-gray-300"
               } rounded-full px-4 py-2 focus:outline-none focus:ring-2 ${
