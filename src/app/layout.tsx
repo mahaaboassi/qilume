@@ -113,6 +113,7 @@ export default function RootLayout({
       <head>
         <link rel="icon" type="image/png" href="/logo.png" />
         <link rel="icon" type="image/x-icon" href="/logo.png" />
+        <meta name="facebook-domain-verification" content="2ksxiv6xikaqj71h9zmthv7rhfv9at" />
         <Script
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-76EMQBESRD"
