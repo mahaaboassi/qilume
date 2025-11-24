@@ -142,7 +142,7 @@ export async function POST(req: NextRequest) {
       </body>
       </html>
     `
-
+    
     const mailOptions = {
       from: email,
       to: "info@qilumeaesthetics.com",
