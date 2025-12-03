@@ -100,7 +100,6 @@ const jsonLdData = {
       "MediFacial treatment in Gurgaon"
   ],
   "logo": "https://www.qilumeaesthetics.com/logo.png",
-  "image": "https://www.qilumeaesthetics.com/logo.png",
 };
 // Root layout component
 export default function RootLayout({
