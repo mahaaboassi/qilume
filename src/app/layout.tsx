@@ -112,6 +112,7 @@ export default function RootLayout({
       <head>
         <link rel="icon" type="image/png" href="/logo.png" />
         <link rel="icon" type="image/x-icon" href="/logo.png" />
+        <link rel="canonical" href="https://www.qilumeaesthetics.com/" />
         {/* Google Analytics */}
         <Script
           async
