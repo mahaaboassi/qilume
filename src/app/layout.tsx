@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+
 import {
   Alatsi,
   Abril_Fatface,
@@ -39,16 +39,7 @@ const darker_grot = Darker_Grotesque({
   weight: ["400", "700"],
 });
 
-export const metadata: Metadata = {
-  title: "Trusted Skin Care Clinic in Gurgaon | Qilumé Aesthetics",
-  description: "Visit Qilumé Aesthetics, a skin care clinic in Gurgaon known for Laser Treatment, Botox Treatment, hair loss treatment and more. Book your session today.",
-  other: {
-    'geo.region': 'IN-HR',
-    'geo.placename': 'Gurgaon',
-    'geo.position': '28.450198; 77.070030',
-    'ICBM': '28.450198, 77.070030',
-  },
-};
+
 const jsonLdData = {
   "@context": "https://schema.org",
   "@type": ["HealthAndBeautyBusiness", "LocalBusiness"],
@@ -110,10 +101,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* <link rel="icon" type="image/png" href="/logo.png" />
-        <link rel="icon" type="image/x-icon" href="/logo.png" /> */}
-        <link rel="canonical" href="https://www.qilumeaesthetics.com/" />
-        {/* Google Analytics */}
+        {/* Site Favicon */}
+        <link rel="icon" type="image/png" href="/logo.png" />
+        <link rel="shortcut icon" href="/logo.png" />
+
+        {/* Default site title */}
+        <title>Qilumé Aesthetics | Skin Care & Wellness Clinic in Gurgaon</title>
         <Script
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-76EMQBESRD"
