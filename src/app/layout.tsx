@@ -102,8 +102,7 @@ export default function RootLayout({
     <html lang="en">
       <head>
         {/* Site Favicon */}
-        <link rel="icon" type="image/png" href="/logo.png" />
-        <link rel="shortcut icon" href="/logo.png" />
+        <link rel="icon" href="/favicon.ico" />
 
         {/* Default site title */}
         <title>Qilumé Aesthetics | Skin Care & Wellness Clinic in Gurgaon</title>
