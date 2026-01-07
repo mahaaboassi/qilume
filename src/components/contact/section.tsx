@@ -47,6 +47,11 @@ function ContactSection() {
     setFormData({ ...formData, [e.target.name]: e.target.value })
     setErrors({ ...errors, [e.target.name]: "" }) // clear error when editing
   }
+  const handleSelectChange = (value: string) => {
+    setFormData({ ...formData, service: value })
+    setErrors({ ...errors, service: "" })
+  }
+
 
   const validate = () => {
     const newErrors: { [key: string]: string } = {}
