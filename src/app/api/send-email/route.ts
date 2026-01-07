@@ -145,8 +145,8 @@ export async function POST(req: NextRequest) {
     
     const mailOptions = {
       from: email,
-      // to: "info@qilumeaesthetics.com",
-      to: "maha.assi@arizglobal.com",
+      to: "info@qilumeaesthetics.com",
+      // to: "maha.assi@arizglobal.com",
       subject: `New Message from ${name}`,
       text: `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
       html: htmlTemplate,
